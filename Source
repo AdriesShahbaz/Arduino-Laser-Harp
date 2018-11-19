@@ -1,0 +1,114 @@
+int motorPin1=8;
+int motorPin2=9;
+int motorPin3=10;
+int motorPin4=11;
+int laser = 12;
+
+void setup() {
+  pinMode(motorPin1,OUTPUT);
+  pinMode(motorPin2,OUTPUT);
+  pinMode(motorPin3,OUTPUT);
+  pinMode(motorPin4,OUTPUT);
+  pinMode(laser, OUTPUT);
+}
+
+void loop() {
+  forward();
+
+}
+
+void forward(){
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(motorPin1,HIGH);
+  digitalWrite(laser, LOW);
+  delay(30);
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(laser, LOW);
+  digitalWrite(motorPin1,LOW);
+  digitalWrite(motorPin2,HIGH);
+  delay(30);
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(laser, LOW);
+  digitalWrite(motorPin2,LOW);
+  digitalWrite(motorPin3,HIGH);
+  delay(30);
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(laser, LOW);
+  digitalWrite(motorPin3,LOW);
+  digitalWrite(motorPin4,HIGH);
+  delay(30);
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(laser, LOW);
+  digitalWrite(motorPin4,LOW);
+  delay(30);
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(laser, LOW);
+  for(int i = 0; i < 2; i++) {
+    digitalWrite(laser, HIGH);
+    delay(100);
+    digitalWrite(motorPin4, HIGH);
+    digitalWrite(laser, LOW);
+    delay(30);
+    digitalWrite(laser, HIGH);
+    delay(100);
+    digitalWrite(laser, LOW);
+    digitalWrite(motorPin4, LOW);
+    digitalWrite(motorPin3, HIGH);
+    delay(30);
+    digitalWrite(laser, HIGH);
+    delay(100);
+    digitalWrite(laser, LOW);
+    digitalWrite(motorPin3, LOW);
+    digitalWrite(motorPin2, HIGH);
+    delay(30);
+    digitalWrite(laser, HIGH);
+    delay(100);
+    digitalWrite(laser, LOW);
+    digitalWrite(motorPin2, LOW);
+    digitalWrite(motorPin1, HIGH);
+    delay(30);
+    digitalWrite(laser, HIGH);
+    delay(100);
+    digitalWrite(laser, LOW);
+    digitalWrite(motorPin1, LOW);
+    delay(30);
+    digitalWrite(laser, HIGH);
+    delay(100);
+    digitalWrite(laser, LOW);
+  }
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(motorPin1,HIGH);
+  digitalWrite(laser, LOW);
+  delay(30);
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(motorPin1,LOW);
+  digitalWrite(motorPin2,HIGH);
+  delay(30);
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(laser, LOW);
+  digitalWrite(motorPin2,LOW);
+  digitalWrite(motorPin3,HIGH);
+  delay(30);
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(laser, LOW);
+  digitalWrite(motorPin3,LOW);
+  digitalWrite(motorPin4,HIGH);
+  delay(30);
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(motorPin4,LOW);
+  delay(30);
+  digitalWrite(laser, HIGH);
+  delay(100);
+  digitalWrite(laser, LOW);
+}
