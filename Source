@@ -1,50 +1,49 @@
-int motorPin1=8;
-int motorPin2=9;
-int motorPin3=10;
-int motorPin4=11;
+int yellow=8;
+int black=9;
+int orange=10;
+int brown=11;
 int laser = 12;
 
 void setup() {
-  pinMode(motorPin1,OUTPUT);
-  pinMode(motorPin2,OUTPUT);
-  pinMode(motorPin3,OUTPUT);
-  pinMode(motorPin4,OUTPUT);
+  pinMode(yellow,OUTPUT);
+  pinMode(black,OUTPUT);
+  pinMode(orange,OUTPUT);
+  pinMode(brown,OUTPUT);
   pinMode(laser, OUTPUT);
 }
 
 void loop() {
   forward();
-
 }
 
 void forward(){
   digitalWrite(laser, HIGH);
   delay(100);
-  digitalWrite(motorPin1,HIGH);
+  digitalWrite(brown,HIGH);
   digitalWrite(laser, LOW);
   delay(30);
   digitalWrite(laser, HIGH);
   delay(100);
   digitalWrite(laser, LOW);
-  digitalWrite(motorPin1,LOW);
-  digitalWrite(motorPin2,HIGH);
+  digitalWrite(brown,LOW);
+  digitalWrite(orange,HIGH);
   delay(30);
   digitalWrite(laser, HIGH);
   delay(100);
   digitalWrite(laser, LOW);
-  digitalWrite(motorPin2,LOW);
-  digitalWrite(motorPin3,HIGH);
+  digitalWrite(orange,LOW);
+  digitalWrite(black,HIGH);
   delay(30);
   digitalWrite(laser, HIGH);
   delay(100);
   digitalWrite(laser, LOW);
-  digitalWrite(motorPin3,LOW);
-  digitalWrite(motorPin4,HIGH);
+  digitalWrite(black,LOW);
+  digitalWrite(yellow,HIGH);
   delay(30);
   digitalWrite(laser, HIGH);
   delay(100);
   digitalWrite(laser, LOW);
-  digitalWrite(motorPin4,LOW);
+  digitalWrite(yellow,LOW);
   delay(30);
   digitalWrite(laser, HIGH);
   delay(100);
@@ -52,31 +51,31 @@ void forward(){
   for(int i = 0; i < 2; i++) {
     digitalWrite(laser, HIGH);
     delay(100);
-    digitalWrite(motorPin4, HIGH);
+    digitalWrite(yellow, HIGH);
     digitalWrite(laser, LOW);
     delay(30);
     digitalWrite(laser, HIGH);
     delay(100);
     digitalWrite(laser, LOW);
-    digitalWrite(motorPin4, LOW);
-    digitalWrite(motorPin3, HIGH);
+    digitalWrite(yellow, LOW);
+    digitalWrite(black, HIGH);
     delay(30);
     digitalWrite(laser, HIGH);
     delay(100);
     digitalWrite(laser, LOW);
-    digitalWrite(motorPin3, LOW);
-    digitalWrite(motorPin2, HIGH);
+    digitalWrite(black, LOW);
+    digitalWrite(orange, HIGH);
     delay(30);
     digitalWrite(laser, HIGH);
     delay(100);
     digitalWrite(laser, LOW);
-    digitalWrite(motorPin2, LOW);
-    digitalWrite(motorPin1, HIGH);
+    digitalWrite(orange, LOW);
+    digitalWrite(brown, HIGH);
     delay(30);
     digitalWrite(laser, HIGH);
     delay(100);
     digitalWrite(laser, LOW);
-    digitalWrite(motorPin1, LOW);
+    digitalWrite(brown, LOW);
     delay(30);
     digitalWrite(laser, HIGH);
     delay(100);
@@ -84,29 +83,29 @@ void forward(){
   }
   digitalWrite(laser, HIGH);
   delay(100);
-  digitalWrite(motorPin1,HIGH);
+  digitalWrite(brown,HIGH);
   digitalWrite(laser, LOW);
   delay(30);
   digitalWrite(laser, HIGH);
   delay(100);
-  digitalWrite(motorPin1,LOW);
-  digitalWrite(motorPin2,HIGH);
+  digitalWrite(brown,LOW);
+  digitalWrite(orange,HIGH);
   delay(30);
   digitalWrite(laser, HIGH);
   delay(100);
   digitalWrite(laser, LOW);
-  digitalWrite(motorPin2,LOW);
-  digitalWrite(motorPin3,HIGH);
+  digitalWrite(orange,LOW);
+  digitalWrite(black,HIGH);
   delay(30);
   digitalWrite(laser, HIGH);
   delay(100);
   digitalWrite(laser, LOW);
-  digitalWrite(motorPin3,LOW);
-  digitalWrite(motorPin4,HIGH);
+  digitalWrite(black,LOW);
+  digitalWrite(yellow,HIGH);
   delay(30);
   digitalWrite(laser, HIGH);
   delay(100);
-  digitalWrite(motorPin4,LOW);
+  digitalWrite(yellow,LOW);
   delay(30);
   digitalWrite(laser, HIGH);
   delay(100);
