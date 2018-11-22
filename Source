@@ -3,6 +3,7 @@ int black=9;
 int orange=10;
 int brown=11;
 int laser = 12;
+int limit = 13;
 
 void setup() {
   pinMode(yellow,OUTPUT);
@@ -10,6 +11,8 @@ void setup() {
   pinMode(orange,OUTPUT);
   pinMode(brown,OUTPUT);
   pinMode(laser, OUTPUT);
+  while (limit == LOW) {
+    
 }
 
 void loop() {
@@ -17,97 +20,74 @@ void loop() {
 }
 
 void forward(){
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(brown,HIGH);
-  digitalWrite(laser, LOW);
-  delay(30);
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(laser, LOW);
-  digitalWrite(brown,LOW);
-  digitalWrite(orange,HIGH);
-  delay(30);
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(laser, LOW);
-  digitalWrite(orange,LOW);
-  digitalWrite(black,HIGH);
-  delay(30);
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(laser, LOW);
-  digitalWrite(black,LOW);
-  digitalWrite(yellow,HIGH);
-  delay(30);
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(laser, LOW);
-  digitalWrite(yellow,LOW);
-  delay(30);
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(laser, LOW);
-  for(int i = 0; i < 2; i++) {
+  for (int i = 0; i < 2; i++) {
     digitalWrite(laser, HIGH);
     delay(100);
-    digitalWrite(yellow, HIGH);
+    digitalWrite(brown,HIGH);
     digitalWrite(laser, LOW);
     delay(30);
     digitalWrite(laser, HIGH);
     delay(100);
     digitalWrite(laser, LOW);
-    digitalWrite(yellow, LOW);
-    digitalWrite(black, HIGH);
+    digitalWrite(brown,LOW);
+    digitalWrite(orange,HIGH);
     delay(30);
     digitalWrite(laser, HIGH);
     delay(100);
     digitalWrite(laser, LOW);
-    digitalWrite(black, LOW);
-    digitalWrite(orange, HIGH);
+    digitalWrite(orange,LOW);
+    digitalWrite(black,HIGH);
     delay(30);
     digitalWrite(laser, HIGH);
     delay(100);
     digitalWrite(laser, LOW);
-    digitalWrite(orange, LOW);
-    digitalWrite(brown, HIGH);
+    digitalWrite(black,LOW);
+    digitalWrite(yellow,HIGH);
     delay(30);
     digitalWrite(laser, HIGH);
     delay(100);
     digitalWrite(laser, LOW);
-    digitalWrite(brown, LOW);
+    digitalWrite(yellow,LOW);
     delay(30);
     digitalWrite(laser, HIGH);
     delay(100);
     digitalWrite(laser, LOW);
   }
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(brown,HIGH);
-  digitalWrite(laser, LOW);
-  delay(30);
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(brown,LOW);
-  digitalWrite(orange,HIGH);
-  delay(30);
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(laser, LOW);
-  digitalWrite(orange,LOW);
-  digitalWrite(black,HIGH);
-  delay(30);
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(laser, LOW);
-  digitalWrite(black,LOW);
-  digitalWrite(yellow,HIGH);
-  delay(30);
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(yellow,LOW);
-  delay(30);
-  digitalWrite(laser, HIGH);
-  delay(100);
-  digitalWrite(laser, LOW);
+
+}
+
+void backword() {
+    for (int i = 0; i > 2; i++) {
+      digitalWrite(laser, HIGH);
+      delay(100);
+      digitalWrite(yellow, HIGH);
+      digitalWrite(laser, LOW);
+      delay(30);
+      digitalWrite(laser, HIGH);
+      delay(100);
+      digitalWrite(laser, LOW);
+      digitalWrite(yellow, LOW);
+      digitalWrite(black, HIGH);
+      delay(30);
+      digitalWrite(laser, HIGH);
+      delay(100);
+      digitalWrite(laser, LOW);
+      digitalWrite(black, LOW);
+      digitalWrite(orange, HIGH);
+      delay(30);
+      digitalWrite(laser, HIGH);
+      delay(100);
+      digitalWrite(laser, LOW);
+      digitalWrite(orange, LOW);
+      digitalWrite(brown, HIGH);
+      delay(30);
+      digitalWrite(laser, HIGH);
+      delay(100);
+      digitalWrite(laser, LOW);
+      digitalWrite(brown, LOW);
+      delay(30);
+      digitalWrite(laser, HIGH);
+      delay(100);
+      digitalWrite(laser, LOW);
+    }
 }
