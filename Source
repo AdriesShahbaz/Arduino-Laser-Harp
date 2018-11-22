@@ -12,11 +12,33 @@ void setup() {
   pinMode(brown,OUTPUT);
   pinMode(laser, OUTPUT);
   while (limit == LOW) {
-    
+      digitalWrite(yellow, HIGH);
+      delay(100);
+      digitalWrite(yellow, LOW);
+      if (limt == HIGH) {
+        break;
+      }  
+      digitalWrite(black, HIGH);
+      delay(100);
+      digitalWrite(black, LOW);
+      if (limt == HIGH) {
+        break;
+      }  
+      digitalWrite(orange, HIGH);
+      delay(100);
+      digitalWrite(orange, LOW);
+      if (limt == HIGH) {
+        break;
+      }  
+      digitalWrite(brown, HIGH);
+      delay(100);
+      digitalWrite(brown, LOW);
+      delay(100);
 }
 
 void loop() {
   forward();
+  backword();
 }
 
 void forward(){
@@ -90,4 +112,21 @@ void backword() {
       delay(100);
       digitalWrite(laser, LOW);
     }
+}
+
+
+void backwordCheck() {
+      digitalWrite(yellow, HIGH);
+      delay(100);
+      digitalWrite(yellow, LOW);
+      digitalWrite(black, HIGH);
+      delay(100);
+      digitalWrite(black, LOW);
+      digitalWrite(orange, HIGH);
+      delay(100);
+      digitalWrite(orange, LOW);
+      digitalWrite(brown, HIGH);
+      delay(100);
+      digitalWrite(brown, LOW);
+      delay(100);
 }
