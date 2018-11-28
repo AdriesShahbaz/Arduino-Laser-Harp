@@ -1,3 +1,5 @@
+#include "Pitches.h" //Use the pitches file
+
 int speaker = 7;
 int yellow=8;
 int black=9;
@@ -139,4 +141,31 @@ void backwordCheck() {
 void check() {
   if (sensor = 100) {
     if (x == 0) {
-      tone(speaker, 
+      tone(speaker, NOTE_C6);
+    }
+    else if (x == 1) {
+      tone(speaker, NOTE_D6);
+    }
+    else if (x == 2) {
+      tone(speaker, NOTE_E6);
+    }
+    else if (X == 3) {
+      tone (speaker, NOTE_F6)
+    }
+    else if (x == 4) {
+      tone (speaker, NOTE_G6);
+    }
+    else if (x == 5) {
+      tone (speaker, NOTE_A7);
+    }
+    else if (x == 6) {
+      tone (speaker, NOTE_B7);
+    }
+    else if (x == 7) {
+      tone (speaker, NOTE_C7);
+    }
+    else if (x == 8) {
+      tone (speaker, NOTE_D7);
+    }
+  }
+}
