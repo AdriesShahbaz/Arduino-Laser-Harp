@@ -168,4 +168,5 @@ void check() {
       tone (speaker, NOTE_D7);
     }
   }
+  noTone(speaker);
 }
