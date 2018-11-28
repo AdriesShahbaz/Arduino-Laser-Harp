@@ -139,7 +139,7 @@ void backwordCheck() {
 }
 
 void check() {
-  if (sensor = 100) {
+  while (sensor <= 100) {
     if (x == 0) {
       tone(speaker, NOTE_C6);
     }
