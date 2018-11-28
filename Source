@@ -1,9 +1,12 @@
+int speaker = 7;
 int yellow=8;
 int black=9;
 int orange=10;
 int brown=11;
 int laser = 12;
 int limit = 13;
+int sensor = A0;
+int x = 0;
 
 void setup() {
   pinMode(yellow,OUTPUT);
@@ -11,6 +14,8 @@ void setup() {
   pinMode(orange,OUTPUT);
   pinMode(brown,OUTPUT);
   pinMode(laser, OUTPUT);
+  pinMode(sensor, INPUT);
+  pinMode(speaker, OUTPUT);
   while (limit == LOW) {
       digitalWrite(yellow, HIGH);
       delay(100);
@@ -130,3 +135,8 @@ void backwordCheck() {
       digitalWrite(brown, LOW);
       delay(100);
 }
+
+void check() {
+  if (sensor = 100) {
+    if (x == 0) {
+      tone(speaker, 
