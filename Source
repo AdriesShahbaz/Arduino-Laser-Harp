@@ -9,6 +9,8 @@ int laser = 12;
 int limit = 13;
 int sensor = A0;
 int x = 0;
+int delayLaser = 5;
+int delayMotor = 3;
 
 void setup() {
   pinMode(yellow,OUTPUT);
@@ -22,25 +24,26 @@ void setup() {
       digitalWrite(yellow, HIGH);
       delay(100);
       digitalWrite(yellow, LOW);
-      if (limt == HIGH) {
+      if (limit == HIGH) {
         break;
       }  
       digitalWrite(black, HIGH);
       delay(100);
       digitalWrite(black, LOW);
-      if (limt == HIGH) {
+      if (limit == HIGH) {
         break;
       }  
       digitalWrite(orange, HIGH);
       delay(100);
       digitalWrite(orange, LOW);
-      if (limt == HIGH) {
+      if (limit == HIGH) {
         break;
       }  
       digitalWrite(brown, HIGH);
       delay(100);
       digitalWrite(brown, LOW);
       delay(100);
+  }
 }
 
 void loop() {
@@ -48,39 +51,40 @@ void loop() {
   backword();
 }
 
-void forward(){
+void forward() {
   for (int i = 0; i < 2; i++) {
     digitalWrite(laser, HIGH);
-    delay(100);
-    digitalWrite(brown,HIGH);
+    delay(5);
+    check();
     digitalWrite(laser, LOW);
-    delay(30);
+    digitalWrite(brown,HIGH);
+    delay(3);
     digitalWrite(laser, HIGH);
-    delay(100);
+    delay(5);
     digitalWrite(laser, LOW);
     digitalWrite(brown,LOW);
     digitalWrite(orange,HIGH);
-    delay(30);
+    delay(3);
     digitalWrite(laser, HIGH);
-    delay(100);
+    delay(5);
+    check();
     digitalWrite(laser, LOW);
     digitalWrite(orange,LOW);
     digitalWrite(black,HIGH);
-    delay(30);
+    delay(3);
     digitalWrite(laser, HIGH);
-    delay(100);
+    delay(5);
+    check();
     digitalWrite(laser, LOW);
     digitalWrite(black,LOW);
     digitalWrite(yellow,HIGH);
-    delay(30);
+    delay(3);
     digitalWrite(laser, HIGH);
-    delay(100);
+    delay(5);
+    check();
     digitalWrite(laser, LOW);
     digitalWrite(yellow,LOW);
-    delay(30);
-    digitalWrite(laser, HIGH);
-    delay(100);
-    digitalWrite(laser, LOW);
+    delay(3);
   }
 
 }
@@ -88,36 +92,37 @@ void forward(){
 void backword() {
     for (int i = 0; i > 2; i++) {
       digitalWrite(laser, HIGH);
-      delay(100);
-      digitalWrite(yellow, HIGH);
+      delay(5);
+      check();
       digitalWrite(laser, LOW);
-      delay(30);
+      digitalWrite(yellow,HIGH);
+      delay(3);
       digitalWrite(laser, HIGH);
-      delay(100);
+      delay(5);
       digitalWrite(laser, LOW);
       digitalWrite(yellow, LOW);
       digitalWrite(black, HIGH);
-      delay(30);
+      delay(3);
       digitalWrite(laser, HIGH);
-      delay(100);
+      delay(5);
+      check();
       digitalWrite(laser, LOW);
-      digitalWrite(black, LOW);
-      digitalWrite(orange, HIGH);
-      delay(30);
+      digitalWrite(black,LOW);
+      digitalWrite(orange,HIGH);
+      delay(3);
       digitalWrite(laser, HIGH);
-      delay(100);
+      delay(5);
+      check();
       digitalWrite(laser, LOW);
-      digitalWrite(orange, LOW);
-      digitalWrite(brown, HIGH);
-      delay(30);
+      digitalWrite(orange,LOW);
+      digitalWrite(brown,HIGH);
+      delay(3);
       digitalWrite(laser, HIGH);
-      delay(100);
+      delay(5);
+      check();
       digitalWrite(laser, LOW);
       digitalWrite(brown, LOW);
-      delay(30);
-      digitalWrite(laser, HIGH);
-      delay(100);
-      digitalWrite(laser, LOW);
+      delay(3);
     }
 }
 
@@ -139,34 +144,34 @@ void backwordCheck() {
 }
 
 void check() {
-  while (sensor <= 100) {
-    if (x == 0) {
-      tone(speaker, NOTE_C6);
-    }
-    else if (x == 1) {
-      tone(speaker, NOTE_D6);
-    }
-    else if (x == 2) {
-      tone(speaker, NOTE_E6);
-    }
-    else if (X == 3) {
-      tone (speaker, NOTE_F6)
-    }
-    else if (x == 4) {
-      tone (speaker, NOTE_G6);
-    }
-    else if (x == 5) {
-      tone (speaker, NOTE_A7);
-    }
-    else if (x == 6) {
-      tone (speaker, NOTE_B7);
-    }
-    else if (x == 7) {
-      tone (speaker, NOTE_C7);
-    }
-    else if (x == 8) {
-      tone (speaker, NOTE_D7);
-    }
-  }
-  noTone(speaker);
+//  while (sensor <= 100) {
+//    if (x == 0) {
+//      tone(speaker, NOTE_C6);
+//    }
+//    else if (x == 1) {
+//      tone(speaker, NOTE_D6);
+//    }
+//    else if (x == 2) {
+//      tone(speaker, NOTE_E6);
+//    }
+//    else if (X == 3) {
+//      tone (speaker, NOTE_F6)
+//    }
+//    else if (x == 4) {
+//      tone (speaker, NOTE_G6);
+//    }
+//    else if (x == 5) {
+//      tone (speaker, NOTE_A7);
+//    }
+//    else if (x == 6) {
+//      tone (speaker, NOTE_B7);
+//    }
+//    else if (x == 7) {
+//      tone (speaker, NOTE_C7);
+//    }
+//    else if (x == 8) {
+//      tone (speaker, NOTE_D7);
+//    }
+//  }
+//  noTone(speaker);
 }
