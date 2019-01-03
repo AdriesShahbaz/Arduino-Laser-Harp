@@ -1,0 +1,132 @@
+int laser = 2;
+
+int yellow = 8;
+int black = 10;
+int orange = 11;
+int brown = 9;
+
+int delayLaser = 15;
+int delayMotor = 20;
+int delayLaserOff = 5;
+
+
+void setup() {
+  pinMode(yellow, OUTPUT);
+  pinMode(black, OUTPUT);
+  pinMode(orange, OUTPUT);
+  pinMode(brown, OUTPUT);
+
+  pinMode(laser, OUTPUT);
+
+}
+
+void loop() {
+  forward();
+  backword();
+}
+
+void forward() {
+  digitalWrite(yellow, HIGH);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, HIGH);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, HIGH);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, HIGH);
+
+}
+
+
+void backword() {
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, HIGH);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, HIGH);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+
+  digitalWrite(laser, LOW);
+  
+  delay(delayLaserOff);
+
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, HIGH);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, HIGH);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+}
