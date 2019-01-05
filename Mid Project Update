@@ -1,0 +1,34 @@
+Things I Have Working and have completed:
+  - Fully built the frame of the harp
+  - Laser is implemented and attached to the frame
+  - Stepper motor is implemented and attached to the frame
+  - Created small circuit board for stepper motor that has six sip sockets to allow easy plug in for the stepper motor
+  - Working test code which displays four distinct beams
+  
+ 
+Things I Need To Still Work On:
+  - Designing circuit boards for the LDRs
+  - Attaching the LDRs to the frame
+  - Create working code for the LDRs
+  - Decide what method of sound I want (Piezo, MIDI, Speaker)
+  
+  
+Issues And How I Solved Them:
+  - The wires comming out of the 6 pin stepper motor were falling out so I designed a board with sip sockets for easy plug in
+  - The stepper motor circuit was not working so I checked all the connections and solders and sure enough the ground solder was not connected
+  - I forgot to implement a central ground and power source so I am using a mini breadboard to send all of my ground and power connections through before they reach the Arduino
+
+
+Issues I Still Have Not Solved:
+  - How to position all of my components (Arduino, Breadboard, Circuit Board) so that they are neat, not in the way, and the wires don't have the chance to pop out
+  - How to handle the wires coming from the LDR boards (Run them down the side of the frame? Send them under the frame?)
+  
+Issues That Will Have To Persist:
+  - Since the mirror is attached to the stepper motor and the stepper is moving very quickly, the mirror vibrates which doesn't allow me to get 4 perfect dots in the exact same spots
+  - Since the mirror is slightly weighted on one side, the motor can only start in certain positions which makes it very difficult to use the top of the frame
+  
+Next Steps:
+  - Solve the issues I still have not solved
+  - Finish the things I need to still work on
+  - Try to learn half stepping and micro stepping to potentially allow for more than 4 beams (Just learned about it today!)
+  - Record a video of a working laser harp that allows the user to play a note when their hand is over a beam
