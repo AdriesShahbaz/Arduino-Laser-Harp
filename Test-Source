@@ -9,6 +9,12 @@ int delayLaser = 15;
 int delayMotor = 20;
 int delayLaserOff = 5;
 
+int a, b, c, d = 0;
+
+int sensor = A0;
+
+int speak = 3;
+
 
 void setup() {
   pinMode(yellow, OUTPUT);
@@ -17,15 +23,12 @@ void setup() {
   pinMode(brown, OUTPUT);
 
   pinMode(laser, OUTPUT);
+  
+  pinMode(speak, OUTPUT);
 
 }
 
 void loop() {
-  forward();
-  backword();
-}
-
-void forward() {
   digitalWrite(yellow, HIGH);
   digitalWrite(black, LOW);
   digitalWrite(orange, LOW);
@@ -36,6 +39,16 @@ void forward() {
   digitalWrite(laser, HIGH);
 
   delay(delayLaser);
+  
+  if (analogRead(sensor) >= 800 && a == 0) {
+    tone(speak, 25);
+    a++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    a = 0;
+  }
 
   digitalWrite(laser, LOW);
 
@@ -51,6 +64,16 @@ void forward() {
   digitalWrite(laser, HIGH);
 
   delay(delayLaser);
+  
+  if (analogRead(sensor) >= 800 && b == 0) {
+    tone(speak, 75);
+    a++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    b = 0;
+  }
 
   digitalWrite(laser, LOW);
 
@@ -67,6 +90,16 @@ void forward() {
 
   delay(delayLaser);
 
+  if (analogRead(sensor) >= 800 && c == 0) {
+    tone(speak, 150);
+    c++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    c = 0;
+  }
+
   digitalWrite(laser, LOW);
 
   delay(delayLaserOff);
@@ -75,11 +108,8 @@ void forward() {
   digitalWrite(black, LOW);
   digitalWrite(orange, LOW);
   digitalWrite(brown, HIGH);
-
-}
-
-
-void backword() {
+  
+  
   digitalWrite(yellow, LOW);
   digitalWrite(black, LOW);
   digitalWrite(orange, LOW);
@@ -90,6 +120,16 @@ void backword() {
   digitalWrite(laser, HIGH);
 
   delay(delayLaser);
+  
+   if (analogRead(sensor) >= 800 && d == 0) {
+    tone(speak, 200);
+    d++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    d = 0;
+  }
 
   digitalWrite(laser, LOW);
 
@@ -103,8 +143,18 @@ void backword() {
   delay(delayMotor);
 
   digitalWrite(laser, HIGH);
-
+  
   delay(delayLaser);
+  
+  if (analogRead(sensor) >= 800 && c == 0) {
+    tone(speak, 150);
+    c++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    c = 0;
+  }
 
   digitalWrite(laser, LOW);
   
@@ -120,6 +170,16 @@ void backword() {
   digitalWrite(laser, HIGH);
 
   delay(delayLaser);
+  
+  if (analogRead(sensor) >= 800 && b == 0) {
+    tone(speak, 75);
+    b++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    b = 0;
+  }
 
   digitalWrite(laser, LOW);
 
@@ -130,3 +190,5 @@ void backword() {
   digitalWrite(orange, LOW);
   digitalWrite(brown, LOW);
 }
+
+
