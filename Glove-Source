@@ -1,0 +1,180 @@
+int laser = 2;
+
+int yellow = 8;
+int black = 10;
+int orange = 11;
+int brown = 9;
+
+int delayLaser = 15;
+int delayMotor = 20;
+int delayLaserOff = 5;
+
+int a, b, c, d = 0;
+
+int sensor = A0;
+
+int speak = 3;
+
+int note1 = 50;
+int note2 = 100;
+int note3 = 150;
+int note4 = 250;
+
+
+void setup() {
+  pinMode(yellow, OUTPUT);
+  pinMode(black, OUTPUT);
+  pinMode(orange, OUTPUT);
+  pinMode(brown, OUTPUT);
+
+  pinMode(laser, OUTPUT);
+  
+  pinMode(speak, OUTPUT);
+
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  Serial.println(analogRead(sensor));
+  
+  digitalWrite(yellow, HIGH);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+  
+  while (analogRead(sensor) >= 700) {
+    analogWrite(speak, note1);
+    Serial.println("1 ON");
+    Serial.println(analogRead(sensor));
+  }
+    analogWrite(speak, 0);
+ 
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, HIGH);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+  
+  while (analogRead(sensor) >= 700) {
+    analogWrite(speak, note2);
+    Serial.println("2 ON");
+    Serial.println(analogRead(sensor));
+  }
+    analogWrite(speak, 0);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, HIGH);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+
+  while (analogRead(sensor) >= 800) {
+    analogWrite(speak, note3);
+    Serial.println("3 ON");
+    Serial.println(analogRead(sensor));
+  }
+    analogWrite(speak, 0);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, HIGH);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+  
+  while (analogRead(sensor) >= 800) {
+    analogWrite(speak, note4);
+    Serial.println("4 ON");
+    Serial.println(analogRead(sensor));
+  }
+    analogWrite(speak, 0);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, HIGH);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+  
+  delay(delayLaser);
+  
+  while (analogRead(sensor) >= 800) {
+    analogWrite(speak, note3);
+    Serial.println("3 ON");
+    Serial.println(analogRead(sensor));
+  }
+  
+    analogWrite(speak, 0);
+
+  digitalWrite(laser, LOW);
+  
+  delay(delayLaserOff);
+
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, HIGH);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+  
+  while (analogRead(sensor) >= 700) {
+    analogWrite(speak, note2);
+    Serial.println("2 ON");
+    Serial.println(analogRead(sensor));
+  }
+  
+    analogWrite(speak, 0);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, HIGH);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+}
