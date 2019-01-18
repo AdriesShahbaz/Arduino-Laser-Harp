@@ -125,22 +125,46 @@ void loop() {
   digitalWrite(brown, HIGH);
   
   delay(delayMotor);
-}
+  
+  digitalWrite(laser, HIGH);
 
+  delay(delayLaser);
+  
+  if (analogRead(sensor) >= 800 && c == 0) {
+    tone(speak, 150);
+    c++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    c = 0;
+  }
+  
+  digitalWrite(laser, LOW);
 
-
-void backword() {
+  delay(delayLaserOff);
+  
   digitalWrite(yellow, LOW);
   digitalWrite(black, LOW);
   digitalWrite(orange, LOW);
   digitalWrite(brown, HIGH);
 
   delay(delayMotor);
-
+  
   digitalWrite(laser, HIGH);
 
   delay(delayLaser);
-
+  
+  if (analogRead(sensor) >= 800 && b == 0) {
+    tone(speak, 70);
+    b++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    b = 0;
+  }
+  
   digitalWrite(laser, LOW);
 
   delay(delayLaserOff);
@@ -151,32 +175,29 @@ void backword() {
   digitalWrite(brown, LOW);
 
   delay(delayMotor);
-
+  
   digitalWrite(laser, HIGH);
 
   delay(delayLaser);
-
-  digitalWrite(laser, LOW);
   
-  delay(delayLaserOff);
+  if (analogRead(sensor) >= 800 && a == 0) {
+    tone(speak, 25);
+    a++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    a = 0;
+  }
+  
+  digitalWrite(laser, LOW);
 
+  delay(delayLaserOff);
+  
   digitalWrite(yellow, LOW);
   digitalWrite(black, HIGH);
   digitalWrite(orange, LOW);
   digitalWrite(brown, LOW);
 
   delay(delayMotor);
-
-  digitalWrite(laser, HIGH);
-
-  delay(delayLaser);
-
-  digitalWrite(laser, LOW);
-
-  delay(delayLaserOff);
-  
-  digitalWrite(yellow, HIGH);
-  digitalWrite(black, LOW);
-  digitalWrite(orange, LOW);
-  digitalWrite(brown, LOW);
 }
