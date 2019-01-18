@@ -1,1 +1,182 @@
-fdsafs
+int laser = 2;
+
+int yellow = 8;
+int black = 10;
+int orange = 11;
+int brown = 9;
+
+int delayLaser = 15;
+int delayMotor = 20;
+int delayLaserOff = 5;
+
+int a, b, c, d = 0;
+
+int sensor = A0;
+
+int speak = 3;
+
+void setup() {
+  pinMode(yellow, OUTPUT);
+  pinMode(black, OUTPUT);
+  pinMode(orange, OUTPUT);
+  pinMode(brown, OUTPUT);
+
+  pinMode(speak, OUTPUT);
+
+  pinMode(laser, OUTPUT);
+
+}
+
+void loop() {
+  digitalWrite(laser, HIGH);
+  
+  delay(delayLaser);
+  
+  if (analogRead(sensor) >= 800 && a == 0) {
+    tone(speak, 25);
+    a++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    a = 0;
+  }
+  
+  digitalWrite(laser, LOW);
+    
+  digitalWrite(yellow, HIGH);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+  
+  if (analogRead(sensor) >= 800 && b == 0) {
+    tone(speak, 70);
+    b++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    b = 0;
+  }
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, HIGH);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+  
+  if (analogRead(sensor) >= 800 && c == 0) {
+    tone(speak, 150);
+    c++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    c = 0;
+  }
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, HIGH);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+  
+  if (analogRead(sensor) >= 800 && d == 0) {
+    tone(speak, 200);
+    d++;
+  }
+  
+  else if (analogRead(sensor) < 800) {
+    noTone(speak);
+    d = 0;
+  }
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, HIGH);
+  
+  delay(delayMotor);
+}
+
+
+
+void backword() {
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, HIGH);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, HIGH);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+
+  digitalWrite(laser, LOW);
+  
+  delay(delayLaserOff);
+
+  digitalWrite(yellow, LOW);
+  digitalWrite(black, HIGH);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+
+  delay(delayMotor);
+
+  digitalWrite(laser, HIGH);
+
+  delay(delayLaser);
+
+  digitalWrite(laser, LOW);
+
+  delay(delayLaserOff);
+  
+  digitalWrite(yellow, HIGH);
+  digitalWrite(black, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(brown, LOW);
+}
