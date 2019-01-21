@@ -1,5 +1,5 @@
 # Arduino-Laser-Harp
-Using an arduino to recreate a harp using a laser. (IN PROGRESS, NOT COMPLETE)
+Using an arduino to recreate a harp using a laser. (THIS REPORT WAS CREATED BEFORE I STARTED, FINAL REPORT CAN FOUND AT THE BOTTOM)
 
 Using a laser, I will project a “harp” using a mirror and make it so that if a person breaks a laser, then a harp like sound or a piezo buzzer will be played. A stepper motor rotating very quickly will make it look like the lasers are not moving. A stepper motor will be constantly sweeping and if an interruption between angles (i.e. 0 < x < 30) then that corresponding sound will be made.
 
@@ -32,3 +32,6 @@ Design:
 - 9 Laser (Strings) coming from the mirror
 - Synth noises when produced when hand is covering laser (Reading from SD Card)
 
+
+Final Report:
+https://docs.google.com/document/d/1ie_FF2NZWcKDU94B0S_8_2DN_NAJ92Xz1j6L2p1hra4/edit?usp=sharing
