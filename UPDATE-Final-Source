@@ -1,3 +1,5 @@
+#include "Pitches.h"
+
 int laser = 12;
 
 int yellow = 8;
@@ -18,10 +20,10 @@ int sensor4 = A3;
 
 int speak = 3;
 
-int note1 = 50;
-int note2 = 100;
-int note3 = 200;
-int note4 = 250;
+int note1 = NOTE_G5;
+int note2 = NOTE_A5;
+int note3 = NOTE_B5;
+int note4 = NOTE_C5;
 
 
 void setup() {
@@ -52,12 +54,10 @@ void loop() {
 
   delay(delayLaser);
 
-  while (analogRead(sensor1) <= 500) {
-    analogWrite(speak, note1);
-    Serial.println("1 ON");
-    Serial.println(analogRead(sensor1));
+  while (analogRead(sensor1) <= 450) {
+    tone(speak, note1);
   }
-    analogWrite(speak, 0);
+    noTone(speak);
  
 
   digitalWrite(laser, LOW);
@@ -76,11 +76,9 @@ void loop() {
   delay(delayLaser);
 
   while (analogRead(sensor2) <= 500) {
-    analogWrite(speak, note2);
-    Serial.println("2 ON");
-    Serial.println(analogRead(sensor2));
+    tone(speak, note2);
   }
-    analogWrite(speak, 0);
+    noTone(speak);
 
   digitalWrite(laser, LOW);
 
@@ -97,12 +95,10 @@ void loop() {
 
   delay(delayLaser);
   
-  while (analogRead(sensor3) <= 500) {
-    analogWrite(speak, note3);
-    Serial.println("3 ON");
-    Serial.println(analogRead(sensor3));
+  while (analogRead(sensor3) <= 450) {
+    tone(speak, note3);
   }
-    analogWrite(speak, 0);
+    noTone(speak);
 
   digitalWrite(laser, LOW);
 
@@ -119,12 +115,10 @@ void loop() {
 
   delay(delayLaser);
 
-  while (analogRead(sensor4) <= 500) {
-    analogWrite(speak, note4);
-    Serial.println("4 ON");
-    Serial.println(analogRead(sensor4));
+  while (analogRead(sensor4) <= 450) {
+    tone(speak, note4);
   }
-    analogWrite(speak, 0);
+    noTone(speak);
 
   digitalWrite(laser, LOW);
 
@@ -141,13 +135,11 @@ void loop() {
   
   delay(delayLaser);
 
-  while (analogRead(sensor3) <= 500) {
-    analogWrite(speak, note3);
-    Serial.println("3 ON");
-    Serial.println(analogRead(sensor3));
+  while (analogRead(sensor3) <= 450) {
+    tone(speak, note3);
   }
   
-    analogWrite(speak, 0);
+    noTone(speak);
 
   digitalWrite(laser, LOW);
   
@@ -165,12 +157,10 @@ void loop() {
   delay(delayLaser);
 
   while (analogRead(sensor2) <= 500) {
-    analogWrite(speak, note2);
-    Serial.println("2 ON");
-    Serial.println(analogRead(sensor2));
+    tone(speak, note2);
   }
   
-    analogWrite(speak, 0);
+    noTone(speak);
 
   digitalWrite(laser, LOW);
 
